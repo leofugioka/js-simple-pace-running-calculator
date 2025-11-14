@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pace Calculator</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Pace Calculator</h1>
+  </header>
+
+  <main>
+    <div>
+      <div>
+        <div>
+          <p for="value-to-calculate">What do you want to calculate?</p>
+          <div role="radiogroup" aria-label="What do you want to calculate?">
+            <div>
+              <input type="radio" id="pace" name="calculate" value="pace" checked>
+              <label for="pace">Pace</label>
+            </div>
+
+            <div>
+              <input type="radio" id="time" name="calculate" value="time">
+              <label for="time">Time</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <label for="value" id="value-label">Time</label>
+          <input type="text" id="value" name="value" value="30">
+        </div>
+
+        <div>
+          <label for="units">Units</label>
+          <select name="units" id="units">
+            <option value="seconds">Seconds</option>
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="distance">Distance</label>
+          <input type="text" name="distance" id="distance" value="130">
+        </div>
+
+        <button id="calculate">Calculate</button>
+      </div>
+
+      <div>
+        <h4>Results</h4>
+        <p id="results-display">3:33 min/Km</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>Developed By <a href="https://github.com/leofugioka"><i class="fa-brands fa-github"></i> Leandro Fugioka</a>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
+    integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- My Scripts -->
+  <script src="index.js"></script>
+</body>
+
+</html>
