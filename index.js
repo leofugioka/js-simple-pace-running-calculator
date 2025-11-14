@@ -1,39 +1,40 @@
 // HTML elements:
-const paceInput = document.getElementById("pace");
-const timeInput = document.getElementById("time");
+const radioGroup = document.querySelector("fieldset[role='radiogroup']");
 const valueInput = document.getElementById("value");
 const valueLabel = document.getElementById("value-label");
-const unitsSelect = document.getElementById("units");
+const valueUnitsSelect = document.getElementById("value-units");
 const distanceInput = document.getElementById("distance");
+const distanceUnitsSelect = document.getElementById("distance-units");
 
 // Field values
-let pace = paceInput.checked;
-let time = timeInput.checked;
-const value = valueInput.value;
-const units = unitsSelect.value;
-const distance = distanceInput.value;
+let value = valueInput.value;
+let valueUnit = valueUnitsSelect.value;
+let distance = distanceInput.value;
+let distanceUnit = distanceUnitsSelect.value;
 
 // Change "Value" text when "Pace" or "Time" is selected
-paceInput.addEventListener("input", () => {
-  pace = paceInput.checked;
-  time = timeInput.checked;
-  changeValueTextContent();
+radioGroup.addEventListener("change", (e) => {
+  const target = e.target;
+
+  if (target.matches('input[type="radio"')) changeValueLabelTextContent(target);
 });
 
-timeInput.addEventListener("input", () => {
-  pace = paceInput.checked;
-  time = timeInput.checked;
-  changeValueTextContent();
-});
+// paceInput.addEventListener("input", () => {
+//   changeValueLabelTextContent();
+// });
 
-const changeValueTextContent = () => {
-  if (pace) {
+// timeInput.addEventListener("input", () => {
+//   changeValueLabelTextContent();
+// });
+
+const changeValueLabelTextContent = (target) => {
+  if (target.value === "pace") {
     valueLabel.textContent = "Time";
   }
 
-  if (time) {
+  if (target.value === "time") {
     valueLabel.textContent = "Pace";
   }
 };
 
-console.log(pace, time, value, units, distance);
+console.log(pace, time, value, valueUnit, distance, distanceUnit, radioGroup.value);

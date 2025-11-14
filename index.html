@@ -22,8 +22,8 @@
     <div>
       <div>
         <div>
-          <p for="value-to-calculate">What do you want to calculate?</p>
-          <div role="radiogroup" aria-label="What do you want to calculate?">
+          <fieldset role="radiogroup">
+            <legend>What do you want to calculate?</legend>
             <div>
               <input type="radio" id="pace" name="calculate" value="pace" checked>
               <label for="pace">Pace</label>
@@ -33,7 +33,7 @@
               <input type="radio" id="time" name="calculate" value="time">
               <label for="time">Time</label>
             </div>
-          </div>
+          </fieldset>
 
         </div>
 
@@ -43,8 +43,7 @@
         </div>
 
         <div>
-          <label for="units">Units</label>
-          <select name="units" id="units">
+          <select name="value-units" id="value-units">
             <option value="seconds">Seconds</option>
             <option value="minutes">Minutes</option>
             <option value="hours">Hours</option>
@@ -54,6 +53,14 @@
         <div>
           <label for="distance">Distance</label>
           <input type="text" name="distance" id="distance" value="130">
+        </div>
+
+        <div>
+          <select name="distance-units" id="distance-units">
+            <option value="meters">Meters</option>
+            <option value="Kilometers">Kilometers</option>
+            <option value="miles">Miles</option>
+          </select>
         </div>
 
         <button id="calculate">Calculate</button>
