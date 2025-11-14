@@ -19,14 +19,6 @@ radioGroup.addEventListener("change", (e) => {
   if (target.matches('input[type="radio"')) changeValueLabelTextContent(target);
 });
 
-// paceInput.addEventListener("input", () => {
-//   changeValueLabelTextContent();
-// });
-
-// timeInput.addEventListener("input", () => {
-//   changeValueLabelTextContent();
-// });
-
 const changeValueLabelTextContent = (target) => {
   if (target.value === "pace") {
     valueLabel.textContent = "Time";
